@@ -224,7 +224,7 @@ func GcpAlertMonitoringEventsAPI(aDB *alert.Store, intDB *integrationkey.Store) 
 			Status:    status,
 			Source:    alert.SourceGcp,
 			ServiceID: serviceID,
-			Dedup:     alert.NewUserDedup(summary),
+			Dedup:     alert.NewUserDedup(body.Incident.IncidentID),
 		}
 
 		err = retry.DoTemporaryError(func(int) error {
