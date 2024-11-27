@@ -56,6 +56,8 @@ CREATE TYPE enum_alert_source AS ENUM (
 	'grafana',
 	'manual',
 	'prometheusAlertmanager',
+    'mxToolBox',
+    'gkeAlertingMonitoring',
 	'site24x7',
 	'universal'
 );
@@ -77,6 +79,8 @@ CREATE TYPE enum_integration_keys_type AS ENUM (
 	'generic',
 	'grafana',
 	'prometheusAlertmanager',
+    'mxToolBox',
+    'gkeAlertingMonitoring',
 	'site24x7',
 	'universal'
 );

@@ -10,6 +10,7 @@ type Type string
 
 // Types
 const (
+	TypeMxToolBox              Type = "mxToolBox"
 	TypeGke                    Type = "gkeAlertingMonitoring"
 	TypeGrafana                Type = "grafana"
 	TypeSite24x7               Type = "site24x7"

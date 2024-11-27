@@ -1159,7 +1159,8 @@ func (e ErrorCode) MarshalGQL(w io.Writer) {
 type IntegrationKeyType string
 
 const (
-	IntegrationKeyTypeGKE					 IntegrationKeyType = "gkeAlertingMonitoring"
+	IntegrationKeyTypeGkeAlertingMonitoring  IntegrationKeyType = "gkeAlertingMonitoring"
+	IntegrationKeyTypeMxToolBox              IntegrationKeyType = "mxToolBox"
 	IntegrationKeyTypeGeneric                IntegrationKeyType = "generic"
 	IntegrationKeyTypeGrafana                IntegrationKeyType = "grafana"
 	IntegrationKeyTypeSite24x7               IntegrationKeyType = "site24x7"
@@ -1169,7 +1170,8 @@ const (
 )
 
 var AllIntegrationKeyType = []IntegrationKeyType{
-	IntegrationKeyTypeGKE,
+	IntegrationKeyTypeGkeAlertingMonitoring,
+	IntegrationKeyTypeMxToolBox,
 	IntegrationKeyTypeGeneric,
 	IntegrationKeyTypeGrafana,
 	IntegrationKeyTypeSite24x7,
@@ -1180,7 +1182,7 @@ var AllIntegrationKeyType = []IntegrationKeyType{
 
 func (e IntegrationKeyType) IsValid() bool {
 	switch e {
-	case IntegrationKeyTypeGeneric, IntegrationKeyTypeGKE, IntegrationKeyTypeGrafana, IntegrationKeyTypeSite24x7, IntegrationKeyTypePrometheusAlertmanager, IntegrationKeyTypeEmail, IntegrationKeyTypeUniversal:
+	case IntegrationKeyTypeGkeAlertingMonitoring, IntegrationKeyTypeMxToolBox, IntegrationKeyTypeGeneric, IntegrationKeyTypeGrafana, IntegrationKeyTypeSite24x7, IntegrationKeyTypePrometheusAlertmanager, IntegrationKeyTypeEmail, IntegrationKeyTypeUniversal:
 		return true
 	}
 	return false

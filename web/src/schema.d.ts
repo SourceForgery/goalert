@@ -630,9 +630,11 @@ export interface IntegrationKeySearchOptions {
 
 export type IntegrationKeyType =
   | 'email'
+  | 'mxToolBox'
   | 'generic'
   | 'grafana'
   | 'prometheusAlertmanager'
+  | 'gkeAlertingMonitoring'
   | 'site24x7'
   | 'universal'
 

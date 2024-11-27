@@ -168,12 +168,13 @@ func (ns NullEnumAlertLogSubjectType) Value() (driver.Value, error) {
 type EnumAlertSource string
 
 const (
-	EnumAlertSourceGke					  EnumAlertSource = "gkeAlertingMonitoring"
 	EnumAlertSourceEmail                  EnumAlertSource = "email"
 	EnumAlertSourceGeneric                EnumAlertSource = "generic"
 	EnumAlertSourceGrafana                EnumAlertSource = "grafana"
 	EnumAlertSourceManual                 EnumAlertSource = "manual"
 	EnumAlertSourcePrometheusAlertmanager EnumAlertSource = "prometheusAlertmanager"
+	EnumAlertSourceMxToolBox              EnumAlertSource = "mxToolBox"
+	EnumAlertSourceGkeAlertingMonitoring  EnumAlertSource = "gkeAlertingMonitoring"
 	EnumAlertSourceSite24x7               EnumAlertSource = "site24x7"
 	EnumAlertSourceUniversal              EnumAlertSource = "universal"
 )
@@ -306,6 +307,8 @@ const (
 	EnumIntegrationKeysTypeGeneric                EnumIntegrationKeysType = "generic"
 	EnumIntegrationKeysTypeGrafana                EnumIntegrationKeysType = "grafana"
 	EnumIntegrationKeysTypePrometheusAlertmanager EnumIntegrationKeysType = "prometheusAlertmanager"
+	EnumIntegrationKeysTypeMxToolBox              EnumIntegrationKeysType = "mxToolBox"
+	EnumIntegrationKeysTypeGkeAlertingMonitoring  EnumIntegrationKeysType = "gkeAlertingMonitoring"
 	EnumIntegrationKeysTypeSite24x7               EnumIntegrationKeysType = "site24x7"
 	EnumIntegrationKeysTypeUniversal              EnumIntegrationKeysType = "universal"
 )

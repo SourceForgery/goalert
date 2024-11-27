@@ -8,6 +8,10 @@ const keys = [
     value: 'gkeAlertingMonitoring',
   },
   {
+    label: 'MxToolBox Alerting',
+    value: 'mxToolBox',
+  },
+  {
     label: 'Generic API',
     value: 'generic',
   },

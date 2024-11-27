@@ -97,6 +97,8 @@ func notifSentSubject(msg string) *Subject {
 
 func createdSubject(msg string) *Subject {
 	switch msg {
+	case "Created via: mxToolBoxMonitoring":
+		return &Subject{Type: SubjectTypeIntegrationKey, Classifier: "MxToolBox"}
 	case "Created via: gkeAlertingMonitoring":
 		return &Subject{Type: SubjectTypeIntegrationKey, Classifier: "GkeAlertingMonitoring"}
 	case "Created via: grafana":

@@ -194,6 +194,8 @@ func (key *IntegrationKey) Href(ctx context.Context, raw *integrationkey.Integra
 	q := make(url.Values)
 	q.Set("token", raw.ID)
 	switch raw.Type {
+	case integrationkey.TypeMxToolBox:
+		return cfg.CallbackURL("/api/v2/mxtoolbox/incoming", q), nil
 	case integrationkey.TypeGke:
 		return cfg.CallbackURL("/api/v2/gke/incoming", q), nil
 	case integrationkey.TypeGeneric:

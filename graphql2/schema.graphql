@@ -1059,6 +1059,7 @@ type IntegrationKey {
 
 enum IntegrationKeyType {
   gkeAlertingMonitoring
+  mxToolBox
   generic
   grafana
   site24x7
