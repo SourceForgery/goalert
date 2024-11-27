@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"strconv"
 	"strings"
 	"time"
 
@@ -119,7 +120,7 @@ func MxToolBoxAlert(aDB *alert.Store, intDB *integrationkey.Store) http.HandlerF
 			Status:    status,
 			Source:    alert.SourceMxToolbox,
 			ServiceID: serviceID,
-			Dedup:     alert.NewUserDedup(summary),
+			Dedup:     alert.NewUserDedup(strconv.Itoa(body.TransitionId) + "MXTOOLBOX"),
 		}
 
 		err = retry.DoTemporaryError(func(int) error {

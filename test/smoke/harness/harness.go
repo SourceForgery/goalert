@@ -54,7 +54,7 @@ var (
 func init() {
 	dbURLStr = os.Getenv("DB_URL")
 	if dbURLStr == "" {
-		dbURLStr = "postgres://username:password@127.0.0.1:5432?sslmode=disable"
+		dbURLStr = "postgres://goalert@127.0.0.1:5432?sslmode=disable"
 	}
 	var err error
 	dbURL, err = url.Parse(dbURLStr)

@@ -227,7 +227,7 @@ func PrometheusAlertmanagerEventsAPI(aDB *alert.Store, intDB *integrationkey.Sto
 			Status:    status,
 			Source:    alert.SourcePrometheusAlertmanager,
 			ServiceID: serviceID,
-			Dedup:     alert.NewUserDedup(summary),
+			Dedup:     alert.NewUserDedup(body.CommonLabels.AlertName),
 		}
 
 		err = retry.DoTemporaryError(func(int) error {
