@@ -4,6 +4,10 @@ const c = new Chance()
 
 const keys = [
   {
+    label: 'GKE Alerting Monitoring',
+    value: 'gkeAlertingMonitoring',
+  },
+  {
     label: 'Generic API',
     value: 'generic',
   },

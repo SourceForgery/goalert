@@ -10,6 +10,7 @@ type Source string
 
 // Source types
 const (
+	SourceGke                    Source = "gkeAlertingMonitoring"  // gke alert
 	SourceEmail                  Source = "email"                  // email alert
 	SourceGrafana                Source = "grafana"                // grafana alert
 	SourceSite24x7               Source = "site24x7"               // site24x7 alert

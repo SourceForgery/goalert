@@ -168,6 +168,7 @@ func (ns NullEnumAlertLogSubjectType) Value() (driver.Value, error) {
 type EnumAlertSource string
 
 const (
+	EnumAlertSourceGke					  EnumAlertSource = "gkeAlertingMonitoring"
 	EnumAlertSourceEmail                  EnumAlertSource = "email"
 	EnumAlertSourceGeneric                EnumAlertSource = "generic"
 	EnumAlertSourceGrafana                EnumAlertSource = "grafana"

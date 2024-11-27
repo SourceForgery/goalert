@@ -1058,6 +1058,7 @@ type IntegrationKey {
 }
 
 enum IntegrationKeyType {
+  gkeAlertingMonitoring
   generic
   grafana
   site24x7
