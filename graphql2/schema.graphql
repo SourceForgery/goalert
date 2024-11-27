@@ -1058,7 +1058,7 @@ type IntegrationKey {
 }
 
 enum IntegrationKeyType {
-  gkeAlertingMonitoring
+  gcpAlertingMonitoring
   mxToolBox
   generic
   grafana

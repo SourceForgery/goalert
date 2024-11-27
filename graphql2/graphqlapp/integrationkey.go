@@ -196,8 +196,8 @@ func (key *IntegrationKey) Href(ctx context.Context, raw *integrationkey.Integra
 	switch raw.Type {
 	case integrationkey.TypeMxToolBox:
 		return cfg.CallbackURL("/api/v2/mxtoolbox/incoming", q), nil
-	case integrationkey.TypeGke:
-		return cfg.CallbackURL("/api/v2/gke/incoming", q), nil
+	case integrationkey.TypeGcp:
+		return cfg.CallbackURL("/api/v2/gcp/incoming", q), nil
 	case integrationkey.TypeGeneric:
 		return cfg.CallbackURL("/api/v2/generic/incoming", q), nil
 	case integrationkey.TypeGrafana:

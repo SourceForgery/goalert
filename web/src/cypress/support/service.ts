@@ -218,7 +218,7 @@ function createIntKey(
     c.pickone([
       'email',
       'mxToolBox',
-      'gkeAlertingMonitoring',
+      'gcpAlertingMonitoring',
       'generic',
       'grafana',
       'site24x7',

@@ -30,7 +30,7 @@ Documentation: https://mxtoolbox.com/monitoring/notifications
   "AlertType": "DOWN",
   "AlertTime": "Wed, 27 Nov 2024 11:17:09 GMT",
   "PolicyName": "DNS Monitor",
-  "StatusChange": "Some information about the current status"
+  "StatusChange": "Some information about the current status",
   "UrlDetails": "https://mxtoolbox.com"
 }
 ```

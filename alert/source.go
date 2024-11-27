@@ -11,7 +11,7 @@ type Source string
 // Source types
 const (
 	SourceMxToolbox              Source = "mxToolBox"              // mxToolBox alert
-	SourceGke                    Source = "gkeAlertingMonitoring"  // gke alert
+	SourceGcp                    Source = "gcpAlertingMonitoring"  // gcp alert
 	SourceEmail                  Source = "email"                  // email alert
 	SourceGrafana                Source = "grafana"                // grafana alert
 	SourceSite24x7               Source = "site24x7"               // site24x7 alert

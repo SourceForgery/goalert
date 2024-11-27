@@ -634,7 +634,7 @@ export type IntegrationKeyType =
   | 'generic'
   | 'grafana'
   | 'prometheusAlertmanager'
-  | 'gkeAlertingMonitoring'
+  | 'gcpAlertingMonitoring'
   | 'site24x7'
   | 'universal'
 

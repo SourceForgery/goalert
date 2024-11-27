@@ -1,4 +1,4 @@
-package gke
+package gcp
 
 import (
 	"bytes"
@@ -157,7 +157,7 @@ func (b postBody) Summary() string {
 func (b postBody) Details(payload string) string {
 	var s strings.Builder
 	if b.Incident.URL != "" {
-		fmt.Fprintf(&s, "[GKE Alert UI](%s)\n\n", b.Incident.URL)
+		fmt.Fprintf(&s, "[GCP Alert UI](%s)\n\n", b.Incident.URL)
 	}
 	if b.Incident.Documentation != "" {
 		s.WriteString(b.Incident.Documentation + "\n\n")
@@ -177,7 +177,7 @@ func clientError(w http.ResponseWriter, code int, err error) bool {
 	return true
 }
 
-func GKEAlertMonitoringEventsAPI(aDB *alert.Store, intDB *integrationkey.Store) http.HandlerFunc {
+func GcpAlertMonitoringEventsAPI(aDB *alert.Store, intDB *integrationkey.Store) http.HandlerFunc {
 
 	return func(w http.ResponseWriter, r *http.Request) {
 
@@ -222,7 +222,7 @@ func GKEAlertMonitoringEventsAPI(aDB *alert.Store, intDB *integrationkey.Store) 
 			Summary:   summary,
 			Details:   validate.SanitizeText(body.Details(string(data)), alert.MaxDetailsLength),
 			Status:    status,
-			Source:    alert.SourceGke,
+			Source:    alert.SourceGcp,
 			ServiceID: serviceID,
 			Dedup:     alert.NewUserDedup(summary),
 		}
@@ -235,7 +235,7 @@ func GKEAlertMonitoringEventsAPI(aDB *alert.Store, intDB *integrationkey.Store) 
 			retry.Limit(10),
 			retry.FibBackoff(time.Second),
 		)
-		if errutil.HTTPError(ctx, w, errors.Wrap(err, "create or update alert for GKE Alerting Monitor")) {
+		if errutil.HTTPError(ctx, w, errors.Wrap(err, "create or update alert for GCP Alerting Monitor")) {
 			return
 		}
 	}
