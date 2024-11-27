@@ -1058,6 +1058,8 @@ type IntegrationKey {
 }
 
 enum IntegrationKeyType {
+  gcpAlertingMonitoring
+  mxToolBox
   generic
   grafana
   site24x7

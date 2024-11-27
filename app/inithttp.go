@@ -2,6 +2,8 @@ package app
 
 import (
 	"context"
+	gcp "github.com/target/goalert/gcpprometheusalertmanager"
+	mxtoolbox "github.com/target/goalert/mxtoolboxaltermanager"
 	"net/http"
 	"net/url"
 	"strings"
@@ -146,6 +148,8 @@ func (app *App) initHTTP(ctx context.Context) error {
 	mux.HandleFunc("/api/v2/grafana/incoming", grafana.GrafanaToEventsAPI(app.AlertStore, app.IntegrationKeyStore))
 	mux.HandleFunc("/api/v2/site24x7/incoming", site24x7.Site24x7ToEventsAPI(app.AlertStore, app.IntegrationKeyStore))
 	mux.HandleFunc("/api/v2/prometheusalertmanager/incoming", prometheus.PrometheusAlertmanagerEventsAPI(app.AlertStore, app.IntegrationKeyStore))
+	mux.HandleFunc("/api/v2/gcp/incoming", gcp.GcpAlertMonitoringEventsAPI(app.AlertStore, app.IntegrationKeyStore))
+	mux.HandleFunc("/api/v2/mxtoolbox/incoming", mxtoolbox.MxToolBoxAlert(app.AlertStore, app.IntegrationKeyStore))
 
 	mux.HandleFunc("/api/v2/generic/incoming", generic.ServeCreateAlert)
 	mux.HandleFunc("/api/v2/heartbeat/", generic.ServeHeartbeatCheck)

@@ -173,6 +173,8 @@ const (
 	EnumAlertSourceGrafana                EnumAlertSource = "grafana"
 	EnumAlertSourceManual                 EnumAlertSource = "manual"
 	EnumAlertSourcePrometheusAlertmanager EnumAlertSource = "prometheusAlertmanager"
+	EnumAlertSourceMxToolBox              EnumAlertSource = "mxToolBox"
+	EnumAlertSourceGcpAlertingMonitoring  EnumAlertSource = "gcpAlertingMonitoring"
 	EnumAlertSourceSite24x7               EnumAlertSource = "site24x7"
 	EnumAlertSourceUniversal              EnumAlertSource = "universal"
 )
@@ -305,6 +307,8 @@ const (
 	EnumIntegrationKeysTypeGeneric                EnumIntegrationKeysType = "generic"
 	EnumIntegrationKeysTypeGrafana                EnumIntegrationKeysType = "grafana"
 	EnumIntegrationKeysTypePrometheusAlertmanager EnumIntegrationKeysType = "prometheusAlertmanager"
+	EnumIntegrationKeysTypeMxToolBox              EnumIntegrationKeysType = "mxToolBox"
+	EnumIntegrationKeysTypeGcpAlertingMonitoring  EnumIntegrationKeysType = "gcpAlertingMonitoring"
 	EnumIntegrationKeysTypeSite24x7               EnumIntegrationKeysType = "site24x7"
 	EnumIntegrationKeysTypeUniversal              EnumIntegrationKeysType = "universal"
 )

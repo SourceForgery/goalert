@@ -4,6 +4,14 @@ const c = new Chance()
 
 const keys = [
   {
+    label: 'GCP Alerting Monitoring',
+    value: 'gcpAlertingMonitoring',
+  },
+  {
+    label: 'MxToolBox Alerting',
+    value: 'mxToolBox',
+  },
+  {
     label: 'Generic API',
     value: 'generic',
   },
