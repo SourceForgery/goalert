@@ -125,7 +125,7 @@ type IncidentDetails struct {
 	Metadata                Metadata          `json:"metadata"`
 	PolicyName              string            `json:"policy_name"`
 	PolicyUserLabels        map[string]string `json:"policy_user_labels"`
-	Documentation           string            `json:"documentation"`
+	Documentation           Documentation     `json:"documentation"`
 	Condition               Condition         `json:"condition"`
 	ConditionName           string            `json:"condition_name"`
 	ThresholdValue          string            `json:"threshold_value"`
@@ -221,7 +221,6 @@ func GcpAlertMonitoringEventsAPI(aDB *alert.Store, intDB *integrationkey.Store) 
 		err = json.NewDecoder(io.TeeReader(r.Body, &buf)).Decode(&body)
 		if clientError(w, http.StatusBadRequest, err) {
 			log.Logf(ctx, "bad request from GCP alertmanager: %v", err)
-			log.Logf(ctx, "%s", r.Body)
 			return
 		}
 
