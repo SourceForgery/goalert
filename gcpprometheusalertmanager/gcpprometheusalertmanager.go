@@ -178,7 +178,7 @@ type Trigger struct {
 }
 
 func (b postBody) Summary() string {
-	return b.Incident.Metric.DisplayName + " " + b.Incident.ResourceDisplayName
+	return b.Incident.Summary
 }
 
 func (b postBody) Details(payload string) string {
@@ -186,8 +186,8 @@ func (b postBody) Details(payload string) string {
 	if b.Incident.URL != "" {
 		fmt.Fprintf(&s, "[GCP Alert UI](%s)\n\n", b.Incident.URL)
 	}
-	if b.Incident.Documentation != "" {
-		s.WriteString(b.Incident.Documentation + "\n\n")
+	if b.Incident.Documentation.Content != "" {
+		s.WriteString(b.Incident.Documentation.Content + "\n\n")
 	}
 	if payload != "" {
 		fmt.Fprintf(&s, "## Payload\n\n```json\n%s\n```\n", payload)
